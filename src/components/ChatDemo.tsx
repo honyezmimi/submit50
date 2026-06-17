@@ -31,7 +31,7 @@ const starterMessages: ChatMessage[] = [
 
 const aiResponses = [
   "For a premium service brand, I would start by removing friction: clear offer menu, calm proof, then a booking path that feels private and controlled.",
-  "If a client asks messy questions over DM, the AI Twin can translate that into intent, answer naturally, and move them toward the right slot.",
+  "Yes. The AI Twin translates slangy DMs into clear intent, answers naturally, and guides the client toward the right slot.",
   "A deposit workflow can be kept elegant: date, time, confirmation, HitPay checkout, then an instant admin receipt.",
 ];
 
@@ -169,14 +169,17 @@ function TierTwoPanel({ onOpenCalendar }: { onOpenCalendar: () => void }) {
 
 function TypingIndicator() {
   return (
-    <div className="flex items-center gap-1 rounded-2xl rounded-bl-sm bg-white/[0.055] px-4 py-3">
-      {[0, 1, 2].map((dot) => (
-        <span
-          key={dot}
-          className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#b5d4c2]"
-          style={{ animationDelay: `${dot * 120}ms` }}
-        />
-      ))}
+    <div className="flex items-center gap-3 rounded-2xl rounded-bl-sm bg-white/[0.055] px-4 py-3 text-xs font-medium uppercase tracking-[0.16em] text-[#d7d1c2]/62">
+      Studio manager is typing
+      <span className="flex items-center gap-1" aria-hidden="true">
+        {[0, 1, 2].map((dot) => (
+          <span
+            key={dot}
+            className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#b5d4c2]"
+            style={{ animationDelay: `${dot * 150}ms` }}
+          />
+        ))}
+      </span>
     </div>
   );
 }
@@ -202,7 +205,7 @@ function TierThreePanel() {
     window.setTimeout(() => {
       setMessages((current) => [...current, { role: "assistant", text: nextResponse }]);
       setIsTyping(false);
-    }, 900);
+    }, 2400);
   }
 
   return (
