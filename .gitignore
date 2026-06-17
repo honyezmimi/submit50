@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+node_modules/
 develop-eggs/
 dist/
 downloads/
@@ -102,3 +103,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Frontend tooling
+.vite/
+*.tsbuildinfo
