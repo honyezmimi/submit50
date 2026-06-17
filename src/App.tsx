@@ -1,4 +1,5 @@
 import { ChatDemo } from "./components/ChatDemo";
+import { CompleteWebsiteSections, SiteFooter } from "./components/CompleteWebsiteSections";
 import { Hero } from "./components/Hero";
 import { NavBar } from "./components/NavBar";
 import { PricingSection } from "./components/PricingSection";
@@ -11,8 +12,9 @@ function App() {
       <NavBar />
       <Hero />
       <PricingSection />
+      <CompleteWebsiteSections />
       <VisionBanner />
-      <div className="h-44" aria-hidden="true" />
+      <SiteFooter />
       <ChatDemo />
     </main>
   );

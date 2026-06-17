@@ -21,7 +21,7 @@ function PricingCard({ tier }: { tier: Tier }) {
         <Icon className="h-5 w-5" aria-hidden="true" />
       </div>
 
-      <h3 className="pr-20 text-xl font-semibold tracking-[-0.04em] text-[#f5f2ea]">{tier.title}</h3>
+      <h3 className="text-xl font-semibold tracking-[-0.04em] text-[#f5f2ea] sm:pr-20">{tier.title}</h3>
       <div className="mt-7">
         <p className="text-5xl font-semibold tracking-[-0.08em] text-[#f5f2ea]">{tier.price}</p>
         <p className="mt-2 text-sm text-[#d7d1c2]/58">{tier.subtext}</p>
@@ -60,7 +60,7 @@ export function PricingSection() {
         </p>
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {tiers.map((tier) => (
           <PricingCard key={tier.id} tier={tier} />
         ))}

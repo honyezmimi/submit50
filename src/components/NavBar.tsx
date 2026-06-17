@@ -1,5 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 
+const links = [
+  { href: "#architecture", label: "Pricing" },
+  { href: "#systems", label: "Systems" },
+  { href: "#process", label: "Process" },
+  { href: "#faq", label: "FAQ" },
+];
+
 export function NavBar() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4 sm:px-6">
@@ -12,20 +19,17 @@ export function NavBar() {
         </a>
 
         <div className="flex items-center gap-2 sm:gap-6">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="hidden text-sm text-[#d7d1c2]/70 transition hover:text-[#f5f2ea] lg:inline-flex"
+            >
+              {link.label}
+            </a>
+          ))}
           <a
-            href="#architecture"
-            className="hidden text-sm text-[#d7d1c2]/70 transition hover:text-[#f5f2ea] sm:inline-flex"
-          >
-            Architecture
-          </a>
-          <a
-            href="#architecture"
-            className="hidden text-sm text-[#d7d1c2]/70 transition hover:text-[#f5f2ea] sm:inline-flex"
-          >
-            Pricing
-          </a>
-          <a
-            href="#architecture"
+            href="#contact"
             className="inline-flex items-center gap-2 rounded-full border border-[#d7d1c2]/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#f5f2ea] transition hover:border-[#8fb99f]/60 hover:bg-[#8fb99f]/10 sm:text-sm"
           >
             Deploy Your System
